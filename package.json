@@ -26,7 +26,7 @@
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
-    "@ant-design/icons-angular": "^16.0.0",
+    "@ant-design/icons-angular": "^20.0.0",
     "@ctrl/tinycolor": "^4.1.0",
     "bootstrap": "^5.3.7",
     "ng-zorro-antd": "^20.1.2",
