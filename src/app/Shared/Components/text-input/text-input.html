@@ -1,0 +1,9 @@
+<div [formGroup]="parentGroup">
+  <label for="controlName">{{ label }}</label>
+  <input
+    nz-input
+    [type]="type"
+    [formControlName]="controlName"
+    [id]="controlName"
+  />
+</div>

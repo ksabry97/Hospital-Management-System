@@ -1,0 +1,15 @@
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--darkGrey);
+  margin-bottom: 6px;
+}
+input {
+  border-radius: 8px;
+  height: 40px;
+  &:hover,
+  :focus,
+  :focus-visible {
+    border-color: var(--primaryColor);
+  }
+}
