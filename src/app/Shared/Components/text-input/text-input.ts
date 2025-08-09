@@ -1,0 +1,21 @@
+import { CommonModule } from '@angular/common';
+import { Component, forwardRef, Input, input } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+@Component({
+  selector: 'app-text-input',
+  imports: [CommonModule, NzInputModule, ReactiveFormsModule],
+  templateUrl: './text-input.html',
+  styleUrl: './text-input.scss',
+})
+export class TextInput {
+  @Input() controlName!: string;
+  @Input() parentGroup!: FormGroup;
+  @Input() label: string = '';
+  @Input() type: string = 'text';
+}

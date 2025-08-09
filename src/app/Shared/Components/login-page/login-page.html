@@ -1,1 +1,50 @@
-<p>login-page works!</p>
+<div
+  class="vh-100 vw-100 login-Contianer d-flex align-items-center justify-content-between"
+>
+  <section class="w-50 left-sec">
+    <head class="d-flex align-items-center gap-2">
+      <!-- <span> <span nz-icon nzType="heart" nzTheme="outline"> </span> </span> -->
+      <p>MediCare HMS</p>
+    </head>
+  </section>
+  <section class="w-50 right-sec d-flex align-items-center flex-column">
+    <form
+      class="login-form d-flex align-items-center flex-column"
+      [formGroup]="loginForm"
+    >
+      <p>Welcome Back</p>
+      <span>Sign in to access your dashboard</span>
+      <div class="w-100 mt-4 d-flex flex-column gap-3">
+        <app-text-input
+          [label]="'Email'"
+          [controlName]="'email'"
+          [parentGroup]="loginForm"
+        ></app-text-input>
+        <app-password-input
+          [label]="'Password'"
+          [controlName]="'password'"
+          [parentGroup]="loginForm"
+        ></app-password-input>
+        <div class="d-flex justify-content-between w-100">
+          <div class="d-flex align-items-center gap-2">
+            <input type="checkbox" /> <label> Remember me</label>
+          </div>
+          <span class="forget-pass"> Forget Password ?</span>
+        </div>
+        <button
+          nz-button
+          nzType="primary"
+          class="button-primary"
+          (click)="onSubmit($event)"
+        >
+          Sign in
+        </button>
+        <p class="w-100 text-center info">
+          Need access ?
+          <span class="forget-pass">Contact your adminstartor</span>
+        </p>
+      </div>
+    </form>
+    <span class="copy-right">© 2025 MediCare Hospital Management System</span>
+  </section>
+</div>
