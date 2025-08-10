@@ -1,6 +1,7 @@
 .login-Contianer {
   background: var(--themeColor);
   .left-sec {
+    padding-inline-start: 64px;
     head {
       span {
         width: 56px;
@@ -12,6 +13,35 @@
         color: var(--darkColor);
         font-size: 30px;
         font-weight: 600;
+      }
+    }
+    .head-content {
+      font-size: 20px;
+      color: var(--lightGrey);
+      display: block;
+      width: 45%;
+      text-wrap: wrap;
+      margin-top: 24px;
+    }
+    .content {
+      margin-top: 24px;
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+      }
+      p {
+        font-size: 16px;
+        color: var(--darkColor);
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        font-weight: 500;
+        span {
+          color: var(--lightGrey);
+          font-size: 14px;
+          font-weight: 400;
+        }
       }
     }
   }
@@ -59,4 +89,16 @@
   font-size: 14px;
   margin-top: 16px;
   color: var(--lightGrey);
+}
+
+@media screen and (max-width: 1025px) {
+  .left-sec {
+    display: none;
+  }
+  .right-sec {
+    width: 100% !important;
+    .login-form {
+      width: 90% !important;
+    }
+  }
 }

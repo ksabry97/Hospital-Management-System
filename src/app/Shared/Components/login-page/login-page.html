@@ -3,9 +3,25 @@
 >
   <section class="w-50 left-sec">
     <head class="d-flex align-items-center gap-2">
-      <!-- <span> <span nz-icon nzType="heart" nzTheme="outline"> </span> </span> -->
+      <span class="d-flex align-items-center justify-content-between"> </span>
       <p>MediCare HMS</p>
     </head>
+    <span class="head-content"
+      >Advanced Hospital Management System for modern healthcare
+      facilities</span
+    >
+    <div class="content d-flex flex-column gap-4">
+      <div class="d-flex align-items-center gap-4" *ngFor="let info of content">
+        <span
+          class="icon d-flex align-items-center justify-content-between"
+          [ngStyle]="{ backgroundColor: info.color }"
+        >
+        </span>
+        <p>
+          {{ info.label }}<span>{{ info.content }}</span>
+        </p>
+      </div>
+    </div>
   </section>
   <section class="w-50 right-sec d-flex align-items-center flex-column">
     <form
