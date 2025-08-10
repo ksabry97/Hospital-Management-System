@@ -5,5 +5,11 @@
     [type]="type"
     [formControlName]="controlName"
     [id]="controlName"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [nzStatus]="control.touched && control.invalid ? 'error' : ''"
   />
+  <span class="text-danger mt-2" *ngIf="errorMessage && control.touched">{{
+    errorMessage
+  }}</span>
 </div>
