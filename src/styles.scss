@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primaryColor: #0586c7;
+  --themeColor: linear-gradient(
+    to bottom right,
+    hsl(195 100% 96%),
+    white,
+    hsl(155 100% 94%)
+  );
+  --darkColor: #111827;
+  --lightGrey: #73848c;
+  --darkGrey: #374151;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.button-primary {
+  background-color: var(--primaryColor) !important;
+  height: 40px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
