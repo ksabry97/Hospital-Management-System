@@ -1,0 +1,89 @@
+<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+<nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+
+  <ng-template #nzTitle>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-weight: bold; font-size: 18px;">🚀 Custom Modal</span>
+      <small style="color: gray;">(with a custom header)</small>
+    </div>
+  </ng-template>
+
+  <ng-container *nzModalContent>
+    <app-add-clinc></app-add-clinc>
+  </ng-container>
+</nz-modal>
+
+
+<!-- <ng-template #customFooter>
+  <button nz-button (click)="handleCancel()">❌ Close</button>
+  <button nz-button nzType="primary" (click)="handleOk()">✅ Save</button>
+</ng-template>
+
+<nz-modal [(nzVisible)]="isVisible" [nzFooter]="customFooter" (nzOnCancel)="handleCancel()">
+  <ng-template #nzTitle>
+    <span>Custom Header</span>
+  </ng-template>
+
+  <p>Custom footer below 👇</p>
+</nz-modal> -->
+
+
+
+
+<!-- <button nz-button nzType="primary" (click)="isVisible = true">
+  Open Modal
+</button>
+
+<ng-template #customFooter>
+  add your footer component here
+</ng-template>
+
+<nz-modal [(nzVisible)]="isVisible" [nzFooter]="customFooter" (nzOnCancel)="isVisible = false">
+  <ng-template #nzTitle>
+    add your header component here
+    jkjhkjkfkkslfs
+    lsdkjflsdjfllf
+  </ng-template>
+
+  add your component body here
+</nz-modal> -->
+
+
+
+<!-- <button nz-button nzType="primary" (click)="openModal()">
+  Open Modal
+</button> -->
+
+<!-- Custom footer -->
+<!-- <ng-template #customFooter>
+  <div style="padding: 8px; text-align: right;">
+    add your footer component here
+  </div>
+</ng-template> -->
+
+<!-- Modal -->
+<!-- <nz-modal [(nzVisible)]="isVisible" [nzFooter]="customFooter" (nzOnCancel)="isVisible = false"
+  (nzOnOk)="isVisible = false"> -->
+<!-- Custom header -->
+<!-- <ng-template #nzTitle>
+    <div style="font-weight: bold;">
+      add your header component here
+    </div>
+  </ng-template> -->
+
+<!-- Body content -->
+<!-- <div>
+    add your component body here
+  </div>
+</nz-modal> -->
+
+
+
+<!-- <ng-template #customHeaderTemplate>
+  <div class="custom-modal-header">
+    <h3 class="custom-title">TESTTTTT</h3>
+    <button nz-button nzType="text" (click)="closeModal()">
+      <i nz-icon nzType="close"></i>
+    </button>
+  </div>
+</ng-template> -->

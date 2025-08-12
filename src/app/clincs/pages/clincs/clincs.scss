@@ -1,0 +1,14 @@
+.modalPopup {
+  border-radius: 16px;
+}
+
+.addClincPopup {
+  border-radius: 16px;
+}
+
+.ant-modal-content {
+  ::ng-deep {
+    border-radius: 16px;
+  }
+
+}
