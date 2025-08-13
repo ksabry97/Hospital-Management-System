@@ -1,0 +1,16 @@
+footer {
+  padding-top: 25px;
+  margin-top: 25px; // just for test
+  border-top: 1px solid #E5E7EB;
+
+  .buttons {
+    width: 100%;
+    gap: 12px;
+
+    .button-primary {
+      flex: 1;
+      color: #fff;
+      border-radius: 8px !important;
+    }
+  }
+}

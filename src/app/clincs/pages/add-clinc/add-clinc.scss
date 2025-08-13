@@ -1,84 +1,50 @@
-header {
-
-  padding: 10px 16px;
-
-  // background-color: var(--primaryColor);
-  background: var(--headerBg);
-
-
-  .headerStart {
+.addClinc {
+  .body {
+    padding-top: 24px;
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 24px;
 
-    .headerIcon {
-      width: 40px;
-      height: 40px;
-      background-color: #fff;
-      border-radius: 10px;
-
-      .medicineIcon {
-        font-size: 20px;
-        color: var(--blackColor);
-      }
+    .phoneNumber,
+    .email-clinicType {
+      gap: 24px;
     }
 
-    .headerText {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
+    .clinicStatus {
+      .start {
+        display: flex;
+        align-items: center;
+        gap: 12px;
 
-      .headerTitle {
-        font-size: 24px;
-        font-weight: 700;
-        color: #fff;
+        .csIcon {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: #16A34A;
+
+          .csIconI {
+            font-size: 16px;
+            color: #fff;
+          }
+        }
+
+        .text {
+          display: flex;
+          flex-direction: column;
+
+          .t1 {
+            color: var(--blackColor);
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          .t2 {
+            color: var(--grayColor);
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
       }
-
-      .headerDescription {
-        color: #BFDBFE;
-        font-size: 14px;
-        font-weight: 500;
-      }
-    }
-
-  }
-
-  .closePopup {
-    border: none;
-    outline: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-
-    .xIcon {
-      font-size: 12px;
-
-    }
-
-    &:hover {
-      .xIcon {
-        color: var(--redColor);
-      }
-    }
-  }
-}
-
-
-
-footer {
-  padding-top: 25px;
-  margin-top: 25px; // just for test
-  border-top: 1px solid #E5E7EB;
-
-  .buttons {
-    width: 100%;
-    gap: 12px;
-
-    .button-primary {
-      flex: 1;
-      color: #fff;
-      border-radius: 8px !important;
     }
   }
 }

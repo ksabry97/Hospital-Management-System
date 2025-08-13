@@ -1,0 +1,14 @@
+<header class="flex-between">
+  <div class="headerStart ">
+    <div class="headerIcon flex-center">
+      <nz-icon class="iconI" [nzType]="icon" nzTheme="outline" />
+    </div>
+    <div class="headerText">
+      <div class="headerTitle">{{title}}</div>
+      <div class="headerDescription">{{description}}</div>
+    </div>
+  </div>
+  <button class="closePopup flex-center" (click)="close()">
+    <nz-icon class="xIcon" nzType="close" nzTheme="outline" />
+  </button>
+</header>
