@@ -10,7 +10,7 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
   templateUrl: './status.html',
   styleUrl: './status.scss',
 })
-export class Status implements OnInit {
+export class Status {
   @Input() controlName!: string;
   @Input() parentGroup!: FormGroup;
   @Input() label: string = '';
@@ -19,8 +19,5 @@ export class Status implements OnInit {
 
   get control() {
     return this.parentGroup.get(this.controlName) as FormControl;
-  }
-  ngOnInit(): void {
-    console.log(this.control.value, 'wwwwwwwwwwwwwwwwwww');
   }
 }
