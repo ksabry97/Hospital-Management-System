@@ -1,0 +1,42 @@
+.Status {
+  padding: 20px;
+  background-color: #cbdcff;
+  border-radius: 10px;
+  .start {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .csIcon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #16a34a;
+
+      .csIconI {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+
+      .t1 {
+        color: var(--blackColor);
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .t2 {
+        color: var(--grayColor);
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.inactive {
+  opacity: 0.3;
+}

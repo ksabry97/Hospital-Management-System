@@ -1,0 +1,15 @@
+<form [formGroup]="parentGroup">
+  <div class="Status flex-between" [ngClass]="{ inactive: !control.value }">
+    <div class="start">
+      <div class="csIcon flex-center">
+        <nz-icon class="csIconI" nzType="check" nzTheme="outline" />
+      </div>
+      <div class="text">
+        <div class="t1">{{ label }}</div>
+        <div class="t2">{{ content }}</div>
+      </div>
+    </div>
+
+    <nz-switch [formControlName]="controlName"></nz-switch>
+  </div>
+</form>

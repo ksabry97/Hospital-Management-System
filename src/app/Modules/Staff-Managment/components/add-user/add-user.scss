@@ -1,0 +1,13 @@
+.addClinc {
+  .body {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    // width: 900px;
+    .phoneNumber,
+    .email-clinicType {
+      gap: 24px;
+    }
+  }
+}

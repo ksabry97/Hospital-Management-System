@@ -12,6 +12,7 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { PopupFooter } from '../../../../Shared/Components/popup-footer/popup-footer';
 import { PopupHeader } from '../../../../Shared/Components/popup-header/popup-header';
 import { TextInput } from '../../../../Shared/Components/text-input/text-input';
+import { Status } from '../../../../Shared/Components/status/status';
 
 @Component({
   selector: 'app-add-clinc',
@@ -25,6 +26,7 @@ import { TextInput } from '../../../../Shared/Components/text-input/text-input';
     NzSelectModule,
     NzSwitchModule,
     ReactiveFormsModule,
+    Status,
   ],
 })
 export class AddClinc {

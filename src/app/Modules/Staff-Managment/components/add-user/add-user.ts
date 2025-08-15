@@ -1,0 +1,56 @@
+import { Component } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { PopupFooter } from '../../../../Shared/Components/popup-footer/popup-footer';
+import { PopupHeader } from '../../../../Shared/Components/popup-header/popup-header';
+import { TextInput } from '../../../../Shared/Components/text-input/text-input';
+import { Status } from '../../../../Shared/Components/status/status';
+
+@Component({
+  selector: 'app-add-user',
+  imports: [
+    NzIconModule,
+    PopupHeader,
+    PopupFooter,
+    TextInput,
+    NzSelectModule,
+    NzSwitchModule,
+    ReactiveFormsModule,
+    Status,
+  ],
+  templateUrl: './add-user.html',
+  styleUrl: './add-user.scss',
+})
+export class AddUser {
+  userForm!: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.userForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      jobTitle: ['', Validators.required],
+      role: ['', Validators.required],
+      assignedClinc: ['', Validators.required],
+      salary: [''],
+      profileInfo: [''],
+      active: [false],
+    });
+  }
+  closePopup(event: any) {
+    console.log('Close popup emitted', event);
+  }
+
+  submit(event: any) {
+    console.log('Submit popup emitted', event);
+
+    console.log(this.userForm.value);
+  }
+}
