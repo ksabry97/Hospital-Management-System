@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { PopupHeader } from '../../../Shared/Components/popup-header/popup-header';
-import { PopupFooter } from '../../../Shared/Components/popup-footer/popup-footer';
-import { TextInput } from '../../../Shared/Components/text-input/text-input';
+
 import {
   FormBuilder,
   FormGroup,
@@ -11,6 +9,9 @@ import {
 } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { PopupFooter } from '../../../../Shared/Components/popup-footer/popup-footer';
+import { PopupHeader } from '../../../../Shared/Components/popup-header/popup-header';
+import { TextInput } from '../../../../Shared/Components/text-input/text-input';
 
 @Component({
   selector: 'app-add-clinc',
