@@ -5,7 +5,9 @@
   <span>Show user Modal</span>
 </button>
 <nz-modal
-  [(nzVisible)]="isVisible"
+  [nzFooter]="null"
+  [nzClosable]="false"
+[(nzVisible)]="isVisible"
   (nzOnCancel)="handleCancel()"
   (nzOnOk)="handleOk()"
 >
@@ -15,6 +17,8 @@
 </nz-modal>
 
 <nz-modal
+  [nzFooter]="null"
+  [nzClosable]="false"
   [(nzVisible)]="isUserVisible"
   (nzOnCancel)="handleCancel()"
   (nzOnOk)="handleOk()"
