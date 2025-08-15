@@ -1,0 +1,66 @@
+<div class="addClinc" id="addClinc">
+
+  <app-popup-header [icon]="'medicine-box'" [title]="'Add New Clinic'"
+    [description]="'Create a new clinic under (Center name)'" (closePopup)="closePopup($event)"></app-popup-header>
+
+  <div class="body">
+
+    <app-text-input [label]="'Clinic Name'" [controlName]="'clinicName'" [parentGroup]="addClinicForm"
+      [placeholder]="'Enter clinic name'"></app-text-input>
+
+    <app-text-input [label]="'Description'" [controlName]="'description'" [parentGroup]="addClinicForm"
+      [placeholder]="'Enter Description'"></app-text-input>
+
+    <app-text-input [label]="'Address'" [controlName]="'address'" [parentGroup]="addClinicForm"
+      [placeholder]="'Complete address including city, state, postal code'"></app-text-input>
+
+    <div class="phoneNumber flex-center">
+
+      <app-text-input [label]="'Phone Number'" [controlName]="'phone'" [parentGroup]="addClinicForm"
+        [placeholder]="'+02 111 2345 678'"></app-text-input>
+
+      <app-text-input [label]="'WhatsApp Number'" [controlName]="'whatsApp'" [parentGroup]="addClinicForm"
+        [placeholder]="'+02 111 2345 678'"></app-text-input>
+
+
+    </div>
+    <div class="email-clinicType flex-center">
+
+      <app-text-input [label]="'Email'" [controlName]="'email'" [parentGroup]="addClinicForm"
+        [placeholder]="'clinic@example.com'"></app-text-input>
+
+      <nz-select [formControlName]="'clinicType'" nzSize="small" style="width: 200px;"
+        nzPlaceHolder="Select Branch Type">
+        @for (type of branchTypes; track $index) {
+        <nz-option [nzLabel]="type.label" [nzValue]="type.value">
+        </nz-option>
+        }
+      </nz-select>
+
+    </div>
+
+    <div class="clinicStatus flex-between">
+
+      <div class="start">
+        <div class="csIcon flex-center">
+          <nz-icon class="csIconI" nzType="check" nzTheme="outline" />
+        </div>
+        <div class="text">
+          <div class="t1">Clinic Status</div>
+          <div class="t2">Active clinics can accept appointments</div>
+        </div>
+      </div>
+
+      <nz-switch [formControlName]="'active'"></nz-switch>
+
+
+    </div>
+
+  </div>
+
+
+
+
+  <app-popup-footer [submitText]="'Add Clinic'" (cancel)="closePopup($event)"
+    (submit)="submit($event)"></app-popup-footer>
+</div>

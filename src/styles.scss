@@ -1,15 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --primaryColor: #0586c7;
-  --themeColor: linear-gradient(
-    to bottom right,
-    hsl(195 100% 96%),
-    white,
-    hsl(155 100% 94%)
-  );
+  --themeColor: linear-gradient(to bottom right,
+      hsl(195 100% 96%),
+      white,
+      hsl(155 100% 94%));
   --darkColor: #111827;
   --lightGrey: #73848c;
   --darkGrey: #374151;
+  --blackColor: #000;
+  --redColor: #d9363e;
+  --headerBg: linear-gradient(to right, #046494 0%, #0586c7 100%);
+  --grayColor: #6B7280;
+
 }
 
 * {
@@ -29,4 +32,37 @@ p {
   border-radius: 8px !important;
   font-size: 14px !important;
   font-weight: 500 !important;
+  border: none;
+  outline: none;
+}
+
+.cancelButton {
+  height: 40px;
+  width: 120px;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: 1px solid #D1D5DB;
+  color: var(--blackColor);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--primaryColor);
+  }
+}
+
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
