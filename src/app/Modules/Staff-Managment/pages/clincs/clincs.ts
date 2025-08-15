@@ -1,7 +1,7 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
-import { AddClinc } from '../add-clinc/add-clinc';
+import { AddClinc } from '../../components/add-clinc/add-clinc';
 
 @Component({
   selector: 'app-clincs',
