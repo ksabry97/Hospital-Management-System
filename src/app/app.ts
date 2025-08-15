@@ -1,7 +1,7 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthInterceptor } from './Shared/Core/Services/interceptor';
+import { AuthInterceptor } from './Shared/Core/Services/interceptor.service';
 import { NZ_ICONS, NzIconModule } from 'ng-zorro-antd/icon';
 // Import ALL icons
 import * as AllIcons from '@ant-design/icons-angular/icons';

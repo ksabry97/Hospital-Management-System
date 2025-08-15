@@ -9,42 +9,5 @@
     .email-clinicType {
       gap: 24px;
     }
-
-    .clinicStatus {
-      .start {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        .csIcon {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          background-color: #16A34A;
-
-          .csIconI {
-            font-size: 16px;
-            color: #fff;
-          }
-        }
-
-        .text {
-          display: flex;
-          flex-direction: column;
-
-          .t1 {
-            color: var(--blackColor);
-            font-size: 18px;
-            font-weight: 600;
-          }
-
-          .t2 {
-            color: var(--grayColor);
-            font-size: 14px;
-            font-weight: 500;
-          }
-        }
-      }
-    }
   }
 }
