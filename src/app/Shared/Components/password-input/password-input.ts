@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { ErrorMessages } from '../../Core/Services/error-messages.service';
 @Component({
   selector: 'app-password-input',
   imports: [NzIconModule, NzInputModule, CommonModule, ReactiveFormsModule],
@@ -18,31 +19,15 @@ export class PasswordInput {
   @Input() placeholder: string = '';
   @Input() disabled: boolean = false;
 
+  constructor(private readonly errorMessagesServ: ErrorMessages) {}
   get control() {
     return this.parentGroup.get(this.controlName) as FormControl;
   }
   get errorMessage() {
-    const control = this.parentGroup.get(this.controlName);
-
-    if (control && control.errors) {
-      const errors = control.errors;
-
-      if (errors['required']) {
-        return `${this.label} is required`;
-      }
-
-      if (errors['minlength']) {
-        return `${this.label} must be at least ${errors['minlength'].requiredLength} characters long`;
-      }
-
-      if (errors['maxlength']) {
-        return `${this.label} must be at most ${errors['maxlength'].requiredLength} characters long`;
-      }
-      if (errors['pattern']) {
-        return `Invalid format`;
-      }
-    }
-
-    return null;
+    return this.errorMessagesServ.getErrorMessages(
+      this.parentGroup,
+      this.controlName,
+      this.label
+    );
   }
 }
