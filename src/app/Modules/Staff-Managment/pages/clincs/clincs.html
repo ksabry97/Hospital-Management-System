@@ -4,26 +4,13 @@
 <button nz-button [nzType]="'primary'" (click)="showUserModal()">
   <span>Show user Modal</span>
 </button>
-<nz-modal
-  [nzFooter]="null"
-  [nzClosable]="false"
-[(nzVisible)]="isVisible"
-  (nzOnCancel)="handleCancel()"
-  (nzOnOk)="handleOk()"
->
-  <ng-container *nzModalContent>
-    <app-add-clinc></app-add-clinc>
-  </ng-container>
-</nz-modal>
 
-<nz-modal
-  [nzFooter]="null"
-  [nzClosable]="false"
-  [(nzVisible)]="isUserVisible"
-  (nzOnCancel)="handleCancel()"
-  (nzOnOk)="handleOk()"
->
-  <ng-container *nzModalContent>
-    <app-add-user></app-add-user>
-  </ng-container>
-</nz-modal>
+<app-shared-modal
+  [isVisible]="isVisible"
+  [modalComponent]="addClinicComponent"
+></app-shared-modal>
+
+<app-shared-modal
+  [isVisible]="isUserVisible"
+  [modalComponent]="addUserComponent"
+></app-shared-modal>

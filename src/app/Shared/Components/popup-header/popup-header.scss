@@ -1,10 +1,7 @@
 header {
-
   padding: 10px 16px;
-
-  // background-color: var(--primaryColor);
   background: var(--headerBg);
-
+  border-radius: 16px 16px 0px 0px;
 
   .headerStart {
     display: flex;

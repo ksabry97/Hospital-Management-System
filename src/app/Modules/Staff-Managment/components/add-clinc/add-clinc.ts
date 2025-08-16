@@ -13,6 +13,7 @@ import { PopupFooter } from '../../../../Shared/Components/popup-footer/popup-fo
 import { PopupHeader } from '../../../../Shared/Components/popup-header/popup-header';
 import { TextInput } from '../../../../Shared/Components/text-input/text-input';
 import { Status } from '../../../../Shared/Components/status/status';
+import { sharedModalService } from '../../../../Shared/Core/Services/shared-modal.service';
 
 @Component({
   selector: 'app-add-clinc',
@@ -37,7 +38,10 @@ export class AddClinc {
     { label: 'Sub Branch', value: 'sub' },
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private sharedModalService: sharedModalService
+  ) {
     this.addClinicForm = this.fb.group({
       clinicName: ['', Validators.required],
       description: [''],
@@ -52,10 +56,12 @@ export class AddClinc {
 
   closePopup(event: any) {
     console.log('Close popup emitted', event);
+    this.sharedModalService.closePopup.next(true);
   }
 
   submit(event: any) {
     console.log('Submit popup emitted', event);
+    this.sharedModalService.closePopup.next(this.addClinicForm.value);
 
     console.log(this.addClinicForm.value);
   }
