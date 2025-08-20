@@ -12,6 +12,7 @@ import { PopupFooter } from '../../../../Shared/Components/popup-footer/popup-fo
 import { PopupHeader } from '../../../../Shared/Components/popup-header/popup-header';
 import { TextInput } from '../../../../Shared/Components/text-input/text-input';
 import { Status } from '../../../../Shared/Components/status/status';
+import { sharedModalService } from '../../../../Shared/Core/Services/shared-modal.service';
 
 @Component({
   selector: 'app-add-user',
@@ -31,7 +32,10 @@ import { Status } from '../../../../Shared/Components/status/status';
 export class AddUser {
   userForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private sharedModalService: sharedModalService
+  ) {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -46,9 +50,11 @@ export class AddUser {
   }
   closePopup(event: any) {
     console.log('Close popup emitted', event);
+    this.sharedModalService.closePopup.next(true);
   }
 
   submit(event: any) {
+    this.sharedModalService.submitPopup.next(this.userForm.value);
     console.log('Submit popup emitted', event);
 
     console.log(this.userForm.value);

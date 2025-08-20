@@ -1,50 +1,45 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { AddClinc } from '../../components/add-clinc/add-clinc';
 import { AddUser } from '../../components/add-user/add-user';
+import { SharedModal } from '../../../../Shared/Components/shared-modal/shared-modal';
+import { sharedModalService } from '../../../../Shared/Core/Services/shared-modal.service';
 
 @Component({
   selector: 'app-clincs',
   templateUrl: './clincs.html',
   styleUrl: './clincs.scss',
-  imports: [NzButtonModule, NzModalModule, AddClinc, AddUser],
+  imports: [NzButtonModule, AddClinc, AddUser, SharedModal],
 })
 export class Clincs {
   isVisible = false;
   isUserVisible = false;
-  @ViewChild('customHeaderTemplate') customHeaderTemplate!: TemplateRef<any>;
 
-  constructor(private modal: NzModalService) {}
+  addClinicComponent = AddClinc;
+  addUserComponent = AddUser;
 
-  // openModal(): void {
-  //   this.modal.create({
-  //     nzTitle: this.customHeaderTemplate,
-  //     nzContent: AddClinc,
-  //     nzClassName: 'addClincPopup',
-  //   });
-  // }
+  constructor(private sharedModalService: sharedModalService) {
+    this.sharedModalService.closePopup.subscribe((res) => {
+      if (res) {
+        this.isVisible = false;
+        this.isUserVisible = false;
+        this.sharedModalService.closePopup.next(false);
+      }
+    });
 
-  // closeModal(): void {
-  //   // Logic to close the modal
-  // }
+    this.sharedModalService.submitPopup.subscribe((res) => {
+      if (res) {
+        this.isVisible = false;
+        this.isUserVisible = false;
+        console.log(res);
+      }
+    });
+  }
 
   showModal(): void {
     this.isVisible = true;
   }
   showUserModal(): void {
     this.isUserVisible = true;
-  }
-
-  handleOk(): void {
-    console.log('Button ok clicked!');
-    this.isVisible = false;
-    this.isUserVisible = false;
-  }
-
-  handleCancel(): void {
-    console.log('Button cancel clicked!');
-    this.isVisible = false;
-    this.isUserVisible = false;
   }
 }
