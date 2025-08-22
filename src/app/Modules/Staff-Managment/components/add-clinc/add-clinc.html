@@ -28,7 +28,7 @@
       [placeholder]="'Complete address including city, state, postal code'"
     ></app-text-input>
 
-    <div class="phoneNumber flex-center">
+    <div class="phoneNumber d-flex">
       <app-text-input
         [label]="'Phone Number'"
         [controlName]="'phone'"
@@ -43,7 +43,7 @@
         [placeholder]="'+02 111 2345 678'"
       ></app-text-input>
     </div>
-    <div class="email-clinicType flex-center">
+    <div class="email-clinicType d-flex">
       <app-text-input
         [label]="'Email'"
         [controlName]="'email'"
@@ -51,16 +51,14 @@
         [placeholder]="'clinic@example.com'"
       ></app-text-input>
 
-      <nz-select
-        [formControlName]="'clinicType'"
-        nzSize="small"
-        style="width: 200px"
-        nzPlaceHolder="Select Branch Type"
-      >
-        @for (type of branchTypes; track $index) {
-        <nz-option [nzLabel]="type.label" [nzValue]="type.value"> </nz-option>
-        }
-      </nz-select>
+      <app-select-input
+        class="w-50"
+        [label]="'Clinc Type'"
+        [controlName]="'clinicType'"
+        [parentGroup]="addClinicForm"
+        [placeholder]="'Select Branch Type'"
+        [options]="branchTypes"
+      ></app-select-input>
     </div>
 
     <app-status

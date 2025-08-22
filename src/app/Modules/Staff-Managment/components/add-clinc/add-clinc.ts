@@ -14,6 +14,7 @@ import { PopupHeader } from '../../../../Shared/Components/popup-header/popup-he
 import { TextInput } from '../../../../Shared/Components/text-input/text-input';
 import { Status } from '../../../../Shared/Components/status/status';
 import { sharedModalService } from '../../../../Shared/Core/Services/shared-modal.service';
+import { SelectInput } from '../../../../Shared/Components/select-input/select-input';
 
 @Component({
   selector: 'app-add-clinc',
@@ -28,14 +29,15 @@ import { sharedModalService } from '../../../../Shared/Core/Services/shared-moda
     NzSwitchModule,
     ReactiveFormsModule,
     Status,
+    SelectInput,
   ],
 })
 export class AddClinc {
   addClinicForm!: FormGroup;
 
   branchTypes = [
-    { label: 'Main Branch', value: 'main' },
-    { label: 'Sub Branch', value: 'sub' },
+    { text: 'Main Branch', value: 'main' },
+    { text: 'Sub Branch', value: 'sub' },
   ];
 
   constructor(
