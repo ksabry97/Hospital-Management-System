@@ -6,6 +6,15 @@
     overflow-y: scroll;
     padding-bottom: 0px;
 
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      border: 2px solid #f0f0f0;
+    }
+
 
     .ant-modal-content {
       border-radius: 16px !important;
@@ -15,6 +24,19 @@
 
         .body {
           padding: 24px !important;
+          max-height: 60vh;
+          overflow-y: scroll;
+          padding-inline-end: 10px;
+          margin-inline-end: 10px;
+
+          &::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: var(--primaryColor);
+            border-radius: 10px;
+          }
 
         }
       }
