@@ -1,0 +1,19 @@
+<div [formGroup]="parentGroup" class="form-group">
+  <label for="controlName">{{ label }}</label>
+
+  <nz-select
+    [formControlName]="controlName"
+    [nzPlaceHolder]="placeholder"
+    [nzDisabled]="disabled"
+    [nzStatus]="control.touched && control.invalid ? 'error' : ''"
+    [nzMode]="mode"
+    [nzAllowClear]="allowClear"
+  >
+    @for (option of options; track $index) {
+    <nz-option [nzValue]="option.value" [nzLabel]="option.text"></nz-option>
+    }
+  </nz-select>
+  <span class="text-danger mt-2" *ngIf="errorMessage && control.touched">{{
+    errorMessage
+  }}</span>
+</div>

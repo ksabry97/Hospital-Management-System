@@ -42,21 +42,23 @@
       ></app-text-input>
     </div>
     <div class="d-flex w-100 gap-4">
-      <app-text-input
+      <app-select-input
         class="w-50"
         [label]="'User Role'"
         [controlName]="'role'"
         [parentGroup]="userForm"
         [placeholder]="'choose role'"
-      ></app-text-input>
-
-      <app-text-input
+        [options]="branchTypes"
+      ></app-select-input>
+      <app-select-input
         class="w-50"
         [label]="'Assigned Clinic'"
         [controlName]="'assignedClinc'"
         [parentGroup]="userForm"
         [placeholder]="'choose clinic'"
-      ></app-text-input>
+        [options]="branchTypes"
+        [mode]="'multiple'"
+      ></app-select-input>
     </div>
     <div class="d-flex w-100 gap-4">
       <app-text-input
@@ -65,14 +67,6 @@
         [controlName]="'salary'"
         [parentGroup]="userForm"
         [placeholder]="'5000'"
-      ></app-text-input>
-
-      <app-text-input
-        class="w-50"
-        [label]="'Profile Info'"
-        [controlName]="'profileInfo'"
-        [parentGroup]="userForm"
-        [placeholder]="'Enter Profile Info'"
       ></app-text-input>
     </div>
 
